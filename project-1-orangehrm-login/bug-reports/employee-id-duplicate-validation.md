@@ -47,7 +47,7 @@ System should consistently validate Employee ID duplicates by either:
 Both employees are successfully created with null Employee IDs, creating duplicate "empty" records in the system.
 
 ## Test Case Reference
-- **Related Test Case:** [TC-EM-07](../../employee-management-test-cases.md#employee-id-field-0-10-character-limit) (Employee ID - Duplicate Min)
+- **Related Test Case:** [TC-EM-07](../../employee-management-test-cases.md) (Employee ID - Duplicate Min)
 - **Test Data:** Empty Employee ID for multiple employees
 - **Expected:** Second creation should be rejected
 - **Actual:** Both creations successful
