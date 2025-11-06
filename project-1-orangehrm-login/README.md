@@ -11,4 +11,3 @@ Manual test design and execution for OrangeHRM demo site's login and password re
 
 ## Files
 - [Test Cases](test-cases.md)
-- [Bug Reports](bug-reports/)
