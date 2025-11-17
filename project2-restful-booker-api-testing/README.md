@@ -31,7 +31,7 @@ Professional API testing suite for a hotel booking system.
 
 ## 📁 Files
 - [`Restful Booking API.postman_collection.json`](Restful_Booking_API.postman_collection.json) - Import into Postman to run tests
-- [`EVIDENCE.md`](evidence.md) - Collection structure and test results
+- [`EVIDENCE.md`](EVIDENCE.md) - Collection structure and test results
 
 ## 🚀 Quick Start
 1. Import `Restful Booking API.postman_collection.json` into Postman
