@@ -30,7 +30,7 @@ Professional API testing suite for a hotel booking system.
 2. **Test Sequencing**: Built dependent workflow in Collection Runner
 
 ## 📁 Files
-- [`Restful Booking API.postman_collection.json`](Restful Booking API.postman_collection.json) - Import into Postman to run tests
+- [`Restful Booking API.postman_collection.json`](Restful_Booking_API.postman_collection.json) - Import into Postman to run tests
 - [`EVIDENCE.md`](evidence.md) - Collection structure and test results
 
 ## 🚀 Quick Start
