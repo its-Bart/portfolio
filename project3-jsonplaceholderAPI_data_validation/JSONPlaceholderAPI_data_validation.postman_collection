@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "b78b1abe-cef6-48ef-bd89-fefa31f2fee9",
+		"name": "JSONPlaceholder API data validation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49956852",
+		"_collection_link": "https://bartoszczeda-7661645.postman.co/workspace/Bart's-Workspace~76111624-0788-4ad5-8f5b-a2400763519a/collection/49956852-b78b1abe-cef6-48ef-bd89-fefa31f2fee9?action=share&source=collection_link&creator=49956852"
+	},
+	"item": [
+		{
+			"name": "Data validation across endpoints",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ensure status code 200\", () => {\r",
+							"    pm.response.to.have.status(200)\r",
+							"})\r",
+							"\r",
+							"const response = pm.response.json()\r",
+							"\r",
+							"testData = [{\"property\":\"userId\", \"value\":\"number\"}, {\"property\":\"id\", \"value\":\"number\"}, {\"property\":\"title\", \"value\":\"string\"}, {\"property\":\"body\", \"value\":\"string\"}, {\"property\":\"email\", \"value\":\"string\"}, {\"property\":\"albumId\", \"value\":\"number\"}, {\"property\":\"url\", \"value\":\"string\"}, {\"property\":\"thumbnailUrl\", \"value\":\"string\"}, {\"property\":\"completed\", \"value\":\"boolean\"}]\r",
+							"\r",
+							"\r",
+							"pm.test(\"Assert the correct data type\", () => {\r",
+							"    const sampleSize = Math.min(5, response.length);\r",
+							"\r",
+							"    // For each item within the specified limit\r",
+							"    for (let itemIndex = 0; itemIndex < sampleSize; itemIndex++) {\r",
+							"        // Iterate through test data properties\r",
+							"        for (let i = 0; i < testData.length; i++) {\r",
+							"            const property = testData[i].property;\r",
+							"            const expectedType = testData[i].value;\r",
+							"            console.log(response[itemIndex].hasOwnProperty(property))\r",
+							"\r",
+							"            // To check if the I-th sample item contains the listed properties\r",
+							"            if (response[itemIndex].hasOwnProperty(property)) {\r",
+							"                console.log(\"Checking \" + property + \" in item \" + itemIndex);\r",
+							"                // And if so, check if the property is of the expected type\r",
+							"                pm.expect(response[itemIndex][property]).to.be.a(expectedType);\r",
+							"            }\r",
+							"        }\r",
+							"    }\r",
+							"})\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/{{endpoint}}",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"{{endpoint}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
